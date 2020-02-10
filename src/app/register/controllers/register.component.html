@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <div class="container">
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+  <div class="form-group">
+    <label>
+       Name:
+      <input type="text" class="form-control" formControlName="name">
+      <div *ngIf="profileForm.get('name').hasError('required')">
+      Oops, please provide a name!
+      </div>
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Username:
+      <input type="text" class="form-control" formControlName="username">
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+        Password:
+       <input type="password" class="form-control" formControlName="password">
+     </label>
+    </div>
+     <div class="form-group">
+     <label>
+       Mobile:
+       <input type="text" class="form-control" formControlName="mobile">
+     </label>
+    </div>
+     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    
+  </form>
+</div>

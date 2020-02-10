@@ -2,6 +2,7 @@
   "name": "employee-front",
   "version": "0.0.0",
   "scripts": {
+    "start:local": "ng serve --proxy-config proxy.local.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
